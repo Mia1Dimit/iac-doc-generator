@@ -22,17 +22,6 @@
 - **Documentation**: Auto-generated README.md for the module
 - **Validation**: Added input validation for bucket names and environment
 
-## File Structure
-iac-doc-generator/
-├── SETUP.md
-├── modules/
-│   └── s3-bucket/
-│       ├── main.tf
-│       ├── variables.tf
-│       ├── outputs.tf
-│       ├── README.md
-│       └── .terraform-docs.yml
-
 ## Next Steps for Day 3
 - Set up n8n workflow to automate terraform-docs generation
 - Create GitHub webhook integration
