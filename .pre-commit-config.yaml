@@ -1,9 +1,13 @@
 repos:
   - repo: local
     hooks:
-      - id: terraform-docs
-        name: terraform-docs
+      - id: terraform-docs-s3-bucket
+        name: terraform-docs for s3-bucket
         entry: terraform-docs markdown table ./modules/s3-bucket
         language: system
         pass_filenames: false
-        
+      - id: terraform-docs-vpc
+        name: terraform-docs for vpc
+        entry: terraform-docs markdown table ./modules/vpc
+        language: system
+        pass_filenames: false
