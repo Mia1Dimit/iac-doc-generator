@@ -15,6 +15,11 @@ jobs:
   update-docs:
     # Run on GitHub's Ubuntu servers
     runs-on: ubuntu-latest
+
+    # Add this permissions block
+    permissions:
+      contents: write
+      pull-requests: read
     
     steps:
       # Step 1: Download your repo to GitHub's server
@@ -37,6 +42,8 @@ jobs:
         run: |
           cd modules/s3-bucket
           terraform-docs .
+          # Clean up the download
+          rm -f ../../terraform-docs.tar.gz
       
       # Step 4: Commit changes if any
       - name: Commit documentation changes
