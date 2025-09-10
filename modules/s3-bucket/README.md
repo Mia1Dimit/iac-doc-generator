@@ -31,7 +31,7 @@ No modules.
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Name of the S3 bucket. Must be globally unique. | `string` | n/a | yes |
 | <a name="input_enable_versioning"></a> [enable\_versioning](#input\_enable\_versioning) | Enable S3 bucket versioning | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment name (e.g., dev, staging, prod) | `string` | `"dev"` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to apply se kati resources | `map(string)` | `{}` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to apply to resources | `map(string)` | `{}` | no |
 
 ## Outputs
 
