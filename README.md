@@ -43,10 +43,6 @@ A starter repository for Infrastructure as Code (IaC) projects using [Terraform]
 
    Follow the [terraform-docs installation guide](https://terraform-docs.io/user-guide/installation/).
 
-4. **(Optional) Set up n8n**
-
-   See [SETUP.md](SETUP.md) for details on n8n workflow automation.
-
 ---
 
 ## Usage
