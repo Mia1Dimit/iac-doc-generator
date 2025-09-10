@@ -14,26 +14,6 @@ A starter repository for Infrastructure as Code (IaC) projects using [Terraform]
 
 ---
 
-## Repository Structure
-
-```
-.
-├── modules/
-│   └── s3-bucket/
-│       ├── main.tf
-│       ├── outputs.tf
-│       ├── variables.tf
-│       ├── README.md
-│       └── .terraform-docs.yml
-├── .pre-commit-config.yaml
-├── .gitignore
-├── LICENSE
-├── README.md
-└── SETUP.md
-```
-
----
-
 ## Getting Started
 
 ### Prerequisites
@@ -42,14 +22,13 @@ A starter repository for Infrastructure as Code (IaC) projects using [Terraform]
 - [Git](https://git-scm.com/)
 - [pre-commit](https://pre-commit.com/)
 - [terraform-docs](https://terraform-docs.io/)
-- (Optional) [n8n](https://n8n.io/) for workflow automation
 
 ### Setup
 
 1. **Clone the repository**
 
    ```sh
-   git clone https://github.com/your-org/iac-doc-generator.git
+   git clone https://github.com/Mia1Dimit/iac-doc-generator.git
    cd iac-doc-generator
    ```
 
@@ -87,15 +66,23 @@ A starter repository for Infrastructure as Code (IaC) projects using [Terraform]
 
 1. Create a new folder under `modules/` (e.g., `modules/my-new-module/`).
 2. Add your `main.tf`, `variables.tf`, `outputs.tf`, and a `.terraform-docs.yml` (copy from an existing module).
-3. Run `terraform-docs` manually or make a commit to trigger the pre-commit hook.
-4. The documentation will be generated in the new module's `README.md`.
+3. **Update `.pre-commit-config.yaml`** to include your new module.  
+   For example, add a new hook:
+   ```yaml
+   - id: terraform-docs-my-new-module
+     name: terraform-docs for my-new-module
+     entry: terraform-docs markdown table ./modules/my-new-module
+     language: system
+     pass_filenames: false
+   ```
+4. Run `terraform-docs` manually or make a commit to trigger the pre-commit hook.
+5. The documentation will be generated in the new module's `README.md`.
 
 ---
 
 ## Automation
 
 - **Pre-commit**: Configured in [.pre-commit-config.yaml](.pre-commit-config.yaml) to run `terraform-docs` on each commit.
-- **n8n**: (Optional) For advanced automation, such as triggering documentation updates from GitHub webhooks. See [SETUP.md](SETUP.md).
 
 ---
 
@@ -117,7 +104,3 @@ This project is licensed under the [MIT License](LICENSE).
 Contributions are welcome! Please open issues or pull requests for improvements or new modules.
 
 ---
-
-## Support
-
-For questions or support, please open an issue in this repository.
