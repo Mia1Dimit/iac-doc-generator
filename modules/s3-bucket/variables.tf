@@ -26,7 +26,7 @@ variable "enable_versioning" {
 }
 
 variable "tags" {
-  description = "Additional tags to apply to our resources"
+  description = "Additional tags to apply se kati resources"
   type        = map(string)
   default     = {}
 }

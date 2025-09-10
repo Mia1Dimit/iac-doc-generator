@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: terraform-docs
+        name: terraform-docs
+        entry: terraform-docs markdown table ./modules/s3-bucket
+        language: system
+        pass_filenames: false
+        
